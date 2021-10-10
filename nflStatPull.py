@@ -20,7 +20,7 @@ url = 'https://www.pro-football-reference.com'
 years = range(2010,2021)
 headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36'}
 for team in datahelp.team_strs.values():
-    for year in range(2010,2012):
+    for year in years:
         r = requests.get(url + '/teams/' + team + '/' + str(year) + '.htm')
         soup = BeautifulSoup(r.content, 'html.parser')
         team_tables = soup.find_all('table')
